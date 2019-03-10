@@ -1,6 +1,6 @@
 @import "../../../ui/globals";
 
-section.color {
+section.card {
   @include shadow;
   height: 235px;
   border: 2px solid $light-grey;

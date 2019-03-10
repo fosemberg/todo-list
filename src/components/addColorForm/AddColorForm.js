@@ -11,7 +11,7 @@ const AddColorForm = ({onNewColor = f => f}) => {
     e.preventDefault()
     onNewColor(_title.value, _color.value)
     _title.value = ''
-    _color.value = '#000000'
+    _color.value = ''
     _title.focus()
   }
 

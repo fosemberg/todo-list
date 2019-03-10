@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Color from './components/color/Color'
-import './ColorList.scss'
+import Card from './components/color/Card'
+import './CardList.scss'
 
-const ColorList = ({
+const CardList = ({
   colors = [],
-  onRate = f => f,
   onRemove = f => f,
   onToggleDone = f => f,
 }) =>
@@ -13,11 +12,10 @@ const ColorList = ({
     {(colors.length === 0) ?
       <p>No Colors Listed. (Add a Color)</p> :
       colors.map(color =>
-        <Color
+        <Card
           key={color.id}
           {...color}
           isDone={color.list === 'done'}
-          onRate={(rating) => onRate(color.id, rating)}
           onRemove={() => onRemove(color.id)}
           onToggleDone={() => onToggleDone(color.id)}
         />
@@ -25,11 +23,10 @@ const ColorList = ({
     }
   </div>
 
-ColorList.propTypes = {
+CardList.propTypes = {
   colors: PropTypes.array,
-  onRate: PropTypes.func,
   onRemove: PropTypes.func,
   onToggleDone: PropTypes.func,
 }
 
-export default ColorList
+export default CardList

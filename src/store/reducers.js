@@ -11,13 +11,6 @@ export const color = (state = {}, action) => {
         rating: 0,
         list: 'todo'
       }
-    case C.RATE_COLOR:
-      return (state.id !== action.id) ?
-        state :
-        {
-          ...state,
-          rating: action.rating
-        }
     case C.MOVE_CARD:
       return (state.id !== action.id) ?
         state :
@@ -44,10 +37,6 @@ export const colors = (state = [], action) => {
         ...state,
         color({}, action)
       ]
-    case C.RATE_COLOR :
-      return state.map(
-        c => color(c, action)
-      )
     case  C.MOVE_CARD:
       return state.map(
         c => color(c, action)

@@ -5,7 +5,6 @@ import './SortMenu.scss'
 const options = {
     date: "SORTED_BY_DATE",
     title: "SORTED_BY_TITLE",
-    rating: "SORTED_BY_RATING"
 }
 
 const SortMenu = ({ sort="SORTED_BY_DATE", onSelect=f=>f}) =>

@@ -3,14 +3,14 @@ import {sortColors} from '../../actions';
 import ui from './SortMenu';
 
 export const SortMenu = connect(
-    state =>
-        ({
-            sort: state.sort
-        }),
-    dispatch =>
-        ({
-            onSelect(sortBy) {
-                dispatch(sortColors(sortBy))
-            }
-        })
+  state =>
+    ({
+      sort: state.sort
+    }),
+  dispatch =>
+    ({
+      onSelect(sortBy) {
+        dispatch(sortColors(sortBy))
+      }
+    })
 )(ui)

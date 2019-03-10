@@ -1,19 +1,18 @@
 import React from 'react'
 import {Component} from 'react'
 import PropTypes from 'prop-types'
-import StarRating from './components/starRating/StarRating'
 import TimeAgo from '../../../ui/TimeAgo'
 import {FaTrash, FaCheck, FaRedo} from 'react-icons/fa'
-import './Color.scss'
+import './Card.scss'
 
-class Color extends Component {
+class Card extends Component {
 
   render() {
     const {
-      title, color, rating, timestamp, isDone = false,
-      onRemove, onRate, onToggleDone
+      title, color, timestamp, isDone = false,
+      onRemove, onToggleDone
     } = this.props
-    let className = "color"
+    let className = "card"
     className += isDone ? ' done' : ''
     return (
       <section
@@ -37,16 +36,13 @@ class Color extends Component {
                   {color}
                 </pre>
         <TimeAgo timestamp={timestamp}/>
-        <div>
-          <StarRating starsSelected={rating} onRate={onRate}/>
-        </div>
       </section>
     )
   }
 
 }
 
-Color.propTypes = {
+Card.propTypes = {
   title: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   rating: PropTypes.number,
@@ -55,10 +51,10 @@ Color.propTypes = {
   onToggleDone: PropTypes.func,
 }
 
-Color.defaultProps = {
+Card.defaultProps = {
   rating: 0,
   onRemove: f => f,
   onRate: f => f
 }
 
-export default Color
+export default Card

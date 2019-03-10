@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import AddColorForm from './addColorForm/AddColorForm'
 import SortMenu from './sortMenu/SortMenu'
-import ColorList from './colorList/ColorList'
+import CardList from './colorList/CardList'
 import { addColor, sortColors, rateColor, removeColor } from '../actions'
 import { sortFunction } from '../lib/array-helpers'
 

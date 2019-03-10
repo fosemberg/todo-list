@@ -7,6 +7,7 @@ export const addColor = (title, color) =>
     id: v4(),
     title,
     color,
+    list: 'todo',
     timestamp: new Date().toString(),
   })
 
@@ -14,13 +15,6 @@ export const removeColor = id =>
   ({
     type: C.REMOVE_COLOR,
     id,
-  })
-
-export const rateColor = (id, rating) =>
-  ({
-    type: C.RATE_COLOR,
-    id,
-    rating,
   })
 
 export const moveCard = (id, list) =>
