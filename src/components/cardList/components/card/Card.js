@@ -22,7 +22,7 @@ const Card = ({
     <section
       className={className}
     >
-      { isEdit
+     { isEdit
         ? <input
           ref={input => _title = input}
           type="text"
@@ -30,32 +30,6 @@ const Card = ({
         />
         : <h1>{title}</h1>
       }
-      { isEdit
-        ? <button
-          onClick={submit}
-          className="edit"
-        >
-          <FaSave/>
-        </button>
-        : <button
-          onClick={onEdit}
-          className="edit"
-        >
-          <FaEdit/>
-        </button>
-      }
-      <button
-        onClick={onToggleDone}
-        className="check"
-      >
-        {isDone ? <FaRedo/> : <FaCheck/>}
-      </button>
-      <button
-        onClick={onRemove}
-        className="remove"
-      >
-        <FaTrash/>
-      </button>
       {
         isEdit
           ? <textarea
@@ -69,6 +43,34 @@ const Card = ({
             {description}
           </pre>
       }
+      <div className="buttons">
+        { isEdit
+          ? <button
+            onClick={submit}
+            className="edit"
+          >
+            <FaSave/>
+          </button>
+          : <button
+            onClick={onEdit}
+            className="edit"
+          >
+            <FaEdit/>
+          </button>
+        }
+        <button
+          onClick={onToggleDone}
+          className="check"
+        >
+          {isDone ? <FaRedo/> : <FaCheck/>}
+        </button>
+        <button
+          onClick={onRemove}
+          className="remove"
+        >
+          <FaTrash/>
+        </button>
+      </div>
       <TimeAgo timestamp={timestamp}/>
     </section>
   )
