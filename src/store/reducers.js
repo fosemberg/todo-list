@@ -1,4 +1,4 @@
-import C from '../constants'
+import C, {SORTED_BY} from '../constants'
 
 export const color = (state = {}, action) => {
   switch (action.type) {
@@ -54,10 +54,24 @@ export const colors = (state = [], action) => {
   }
 }
 
-export const sort = (state = "SORTED_BY_DATE", action) => {
+export const sort = (
+  state = {
+    field: SORTED_BY.DATE,
+    isDesc: false,
+  },
+  action
+) => {
   switch (action.type) {
-    case "SORT_CARDS":
-      return action.sortBy
+    case C.SORT_CARDS:
+      return {
+        ...state,
+        field: action.field,
+      }
+    case C.SORT_CARDS_DESC_TOGGLE:
+      return {
+        ...state,
+        isDesc: !state.isDesc,
+      }
     default :
       return state
   }

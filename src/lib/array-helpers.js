@@ -17,7 +17,7 @@ export const sortBy = (type, field, isReverse = false) => {
 
 export const sortFunction = sort =>
   (sort === SORTED_BY.TITLE)
-    ? sortBy("string", "title")
+    ? sortBy("string", SORTED_BY.TITLE)
     : (sort === SORTED_BY.DESCRIPTION)
-      ? sortBy("string", "description")
+      ? sortBy("string", SORTED_BY.DESCRIPTION)
       : sortBy("date", "timestamp")

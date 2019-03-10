@@ -2,14 +2,15 @@ const constants = {
   ADD_CARD: "ADD_CARD",
   REMOVE_CARD: "REMOVE_CARD",
   SORT_CARDS: "SORT_CARDS",
+  SORT_CARDS_DESC_TOGGLE: "SORT_CARDS_DESC_TOGGLE",
   MOVE_CARD: "MOVE_CARD",
   TOGGLE_DONE_CARD: "TOGGLE_DONE_CARD",
 }
 
 export const SORTED_BY = {
-  DATE: "SORTED_BY_DATE",
-  TITLE: 'SORTED_BY_TITLE',
-  DESCRIPTION: 'SORTED_BY_DESCRIPTION',
+  DATE: "date",
+  TITLE: 'title',
+  DESCRIPTION: 'description',
 }
 
 export default constants

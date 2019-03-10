@@ -30,8 +30,8 @@ export const toggleDoneCard = (id) =>
     id,
   })
 
-export const sortCards = sortBy =>
+export const sortCards = field =>
   ({
     type: C.SORT_CARDS,
-    sortBy,
+    field,
   })
