@@ -5,7 +5,8 @@ import ui from './SortMenu';
 export const SortMenu = connect(
   state =>
     ({
-      sort: state.sort
+      field: state.sort.field,
+      isDesc: state.sort.isDesc,
     }),
   dispatch =>
     ({

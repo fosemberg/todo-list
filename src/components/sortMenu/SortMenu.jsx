@@ -9,22 +9,35 @@ const options = {
   description: SORTED_BY.DESCRIPTION,
 }
 
-const SortMenu = ({sort = SORTED_BY.DATE, onSelect = f => f}) =>
-  <nav className="menu">
+const SortMenu = ({
+  field = SORTED_BY.DATE,
+  isDesc = false,
+  onSelect = f => f
+}) => {
+  return <nav className="menu">
     <h1>Sort Colors</h1>
     {Object.keys(options).map((item, i) =>
       <a key={i}
          href="#"
-         className={(sort === options[item]) ? "selected" : null}
+         className={(field === options[item]) ? "selected" : null}
          onClick={e => {
            e.preventDefault()
            onSelect(options[item])
-         }}>{item}</a>
+         }}
+      >
+        {item}{field === options[item]
+          ? isDesc
+            ? '^'
+            : '\\/'
+          : ''}
+      </a>
     )}
   </nav>
+}
 
 SortMenu.propTypes = {
-  sort: PropTypes.string,
+  field: PropTypes.string,
+  isDesc: PropTypes.bool,
   onSelect: PropTypes.func
 }
 
