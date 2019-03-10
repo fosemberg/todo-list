@@ -1,9 +1,9 @@
 import React from 'react'
 import {Component} from 'react'
 import PropTypes from 'prop-types'
-import './AddColorForm.scss'
+import './AddCardForm.scss'
 
-const AddColorForm = ({onNewColor = f => f}) => {
+const AddCardForm = ({onNewColor = f => f}) => {
 
   let _title, _color
 
@@ -16,7 +16,7 @@ const AddColorForm = ({onNewColor = f => f}) => {
   }
 
   return (
-    <form className="add-color" onSubmit={submit}>
+    <form className="add-card" onSubmit={submit}>
       <input ref={input => _title = input}
              type="text"
              placeholder="Card title"
@@ -34,8 +34,8 @@ const AddColorForm = ({onNewColor = f => f}) => {
 
 }
 
-AddColorForm.propTypes = {
+AddCardForm.propTypes = {
   onNewColor: PropTypes.func
 }
 
-export default AddColorForm
+export default AddCardForm

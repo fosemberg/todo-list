@@ -1,6 +1,6 @@
 import connect from 'react-redux/es/connect/connect';
 import {addColor} from '../../actions';
-import ui from './AddColorForm';
+import ui from './AddCardForm';
 
 export const AddColorForm = connect(
     null,
