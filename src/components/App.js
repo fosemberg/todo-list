@@ -1,15 +1,15 @@
 import React from 'react';
-import {AddColorForm} from './addColorForm/container';
-import {SortMenu} from './sortMenu/container';
-import {ColorList} from './colorList/container';
+import AddCardForm from './addCardForm/container';
+import SortMenu from './sortMenu/container';
+import CardList from './cardList/container';
 
 import './ui/APP.scss'
 
 const App = () =>
   <div className="app">
     <SortMenu/>
-    <AddColorForm/>
-    <ColorList/>
+    <AddCardForm/>
+    <CardList/>
   </div>
 
 export default App

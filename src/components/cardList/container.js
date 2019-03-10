@@ -3,7 +3,7 @@ import {sortFunction, sortBy} from '../../lib/array-helpers';
 import {removeCard, toggleDoneCard} from '../../actions';
 import ui from './CardList';
 
-export const ColorList = connect(
+export default connect(
   state =>
     ({
       colors: [...state.colors]

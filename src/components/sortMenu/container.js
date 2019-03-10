@@ -2,7 +2,7 @@ import connect from 'react-redux/es/connect/connect';
 import {sortCards} from '../../actions';
 import ui from './SortMenu';
 
-export const SortMenu = connect(
+export default connect(
   state =>
     ({
       field: state.sort.field,
