@@ -7,6 +7,8 @@ const CardList = ({
   colors = [],
   onRemove = f => f,
   onToggleDone = f => f,
+  onEdit = f => f,
+  onSave = f => f,
 }) =>
   <div className="card-list">
     {(colors.length === 0) ?
@@ -18,6 +20,8 @@ const CardList = ({
           isDone={color.list === 'done'}
           onRemove={() => onRemove(color.id)}
           onToggleDone={() => onToggleDone(color.id)}
+          onEdit={() => onEdit(color.id)}
+          onSave={() => onSave(color.id, color.title, color.description)}
         />
       )
     }
@@ -27,6 +31,8 @@ CardList.propTypes = {
   colors: PropTypes.array,
   onRemove: PropTypes.func,
   onToggleDone: PropTypes.func,
+  onEdit: PropTypes.func,
+  onSave: PropTypes.func,
 }
 
 export default CardList

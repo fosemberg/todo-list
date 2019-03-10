@@ -8,8 +8,8 @@ export const color = (state = {}, action) => {
         title: action.title,
         description: action.description,
         timestamp: action.timestamp,
-        rating: 0,
-        list: 'todo'
+        list: action.list,
+        isEdit: action.isEdit,
       }
     case C.MOVE_CARD:
       return (state.id !== action.id) ?
@@ -17,6 +17,22 @@ export const color = (state = {}, action) => {
         {
           ...state,
           list: action.list
+        }
+    case C.SAVE_CARD:
+      return (state.id !== action.id) ?
+        state :
+        {
+          ...state,
+          title: action.title,
+          description: action.description,
+          isEdit: false,
+        }
+    case C.EDIT_CARD:
+      return (state.id !== action.id) ?
+        state :
+        {
+          ...state,
+          isEdit: true,
         }
     case C.TOGGLE_DONE_CARD:
       return (state.id !== action.id) ?
@@ -37,7 +53,15 @@ export const colors = (state = [], action) => {
         ...state,
         color({}, action)
       ]
-    case  C.MOVE_CARD:
+    case C.MOVE_CARD:
+      return state.map(
+        c => color(c, action)
+      )
+    case C.SAVE_CARD:
+      return state.map(
+        c => color(c, action)
+      )
+    case C.EDIT_CARD:
       return state.map(
         c => color(c, action)
       )
