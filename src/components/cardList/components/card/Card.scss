@@ -1,6 +1,6 @@
 @import "../../../ui/globals";
 
-section.card {
+.card {
   @include shadow;
   height: 235px;
   border: 2px solid $light-grey;
@@ -55,6 +55,10 @@ section.card {
 
     &.check {
       right: 3.5em;
+    }
+
+    &.edit {
+      right: 6.5em;
     }
   }
 

@@ -15,7 +15,10 @@ const AddCardForm = ({onNewCard: onNewCard = f => f}) => {
   }
 
   return (
-    <form className="add-card" onSubmit={submit}>
+    <form
+      className="add-card"
+      onSubmit={submit}
+    >
       <input ref={input => _title = input}
              type="text"
              placeholder="Card title"

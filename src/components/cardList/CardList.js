@@ -21,7 +21,7 @@ const CardList = ({
           onRemove={() => onRemove(color.id)}
           onToggleDone={() => onToggleDone(color.id)}
           onEdit={() => onEdit(color.id)}
-          onSave={() => onSave(color.id, color.title, color.description)}
+          onSave={(title, description) => onSave(color.id, title, description)}
         />
       )
     }
