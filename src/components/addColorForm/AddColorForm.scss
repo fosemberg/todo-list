@@ -3,12 +3,13 @@
 form.add-color {
   width: 100%;
   display: flex;
+  flex-direction: column;
 
   >:first-child {
     flex-grow: 1;
   }
 
-  input, button {
+  input, button, textarea {
     margin: .5em;
     padding: .25em;
     font-size: 1.2em;

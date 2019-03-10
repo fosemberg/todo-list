@@ -39,12 +39,19 @@ section.color {
   button {
     position: absolute;
     top: .5em;
-    right: .5em;
     flex-basis: calc(12% - 1em);
     text-align: right;
     @include fade-bg($light, $light-grey);
     padding: .75em;
     border-radius: .5px;
+
+    &.remove {
+      right: .5em;
+    }
+
+    &.check {
+      right: 3.5em;
+    }
   }
 
   > div:last-child {
@@ -54,7 +61,7 @@ section.color {
     margin-top: .5em;
   }
 
-  div.color {
+  .color {
     height: 100px;
     flex-basis: 100%;
   }
