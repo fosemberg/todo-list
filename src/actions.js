@@ -30,6 +30,12 @@ export const moveCard = (id, list) =>
     list,
   })
 
+export const toggleDoneCard = (id) =>
+  ({
+    type: C.TOGGLE_DONE_CARD,
+    id,
+  })
+
 export const sortColors = sortBy =>
   ({
     type: "SORT_COLORS",

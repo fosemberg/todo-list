@@ -4,6 +4,7 @@ const constants = {
   REMOVE_COLOR: "REMOVE_COLOR",
   SORT_COLORS: "SORT_COLORS",
   MOVE_CARD: "MOVE_CARD",
+  TOGGLE_DONE_CARD: "TOGGLE_DONE_CARD",
 }
 
 export default constants

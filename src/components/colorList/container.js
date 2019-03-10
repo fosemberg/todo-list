@@ -1,6 +1,6 @@
 import connect from 'react-redux/es/connect/connect';
 import {sortFunction} from '../../lib/array-helpers';
-import {rateColor, removeColor, moveCard} from '../../actions';
+import {rateColor, removeColor, toggleDoneCard} from '../../actions';
 import ui from './ColorList';
 
 export const ColorList = connect(
@@ -16,8 +16,8 @@ export const ColorList = connect(
       onRate(id, rating) {
         dispatch(rateColor(id, rating))
       },
-      onMove(id, list) {
-        dispatch(moveCard(id, list))
+      onToggleDone(id) {
+        dispatch(toggleDoneCard(id))
       }
     })
 )(ui)

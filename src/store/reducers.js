@@ -25,6 +25,13 @@ export const color = (state = {}, action) => {
           ...state,
           list: action.list
         }
+    case C.TOGGLE_DONE_CARD:
+      return (state.id !== action.id) ?
+        state :
+        {
+          ...state,
+          list: state.list === 'todo' ? 'done' : 'todo'
+        }
     default :
       return state
   }
@@ -42,6 +49,10 @@ export const colors = (state = [], action) => {
         c => color(c, action)
       )
     case  C.MOVE_CARD:
+      return state.map(
+        c => color(c, action)
+      )
+    case C.TOGGLE_DONE_CARD :
       return state.map(
         c => color(c, action)
       )

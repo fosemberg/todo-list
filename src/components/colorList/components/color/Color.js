@@ -3,21 +3,29 @@ import {Component} from 'react'
 import PropTypes from 'prop-types'
 import StarRating from './components/starRating/StarRating'
 import TimeAgo from '../../../ui/TimeAgo'
-import {FaTrash, FaCheck} from 'react-icons/fa'
+import {FaTrash, FaCheck, FaRedo} from 'react-icons/fa'
 import './Color.scss'
 
 class Color extends Component {
 
   render() {
-    const {title, color, rating, timestamp, onRemove, onRate} = this.props
+    const {
+      title, color, rating, timestamp, isDone = false,
+      onRemove, onRate, onToggleDone
+    } = this.props
+    let className = "color"
+    className += isDone ? ' done' : ''
     return (
-      <section className="color" style={this.style}>
+      <section
+        className={className}
+        style={this.style}
+      >
         <h1 ref="title">{title}</h1>
         <button
-          onClick={onRemove}
+          onClick={onToggleDone}
           className="check"
         >
-          <FaCheck/>
+          {isDone ? <FaRedo/> : <FaCheck/>}
         </button>
         <button
           onClick={onRemove}
@@ -43,7 +51,8 @@ Color.propTypes = {
   color: PropTypes.string.isRequired,
   rating: PropTypes.number,
   onRemove: PropTypes.func,
-  onRate: PropTypes.func
+  onRate: PropTypes.func,
+  onToggleDone: PropTypes.func,
 }
 
 Color.defaultProps = {
