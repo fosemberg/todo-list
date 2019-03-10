@@ -13,8 +13,7 @@ const Card = ({
 
   let _title, _description;
 
-  const submit = e => {
-    // e.preventDefault()
+  const submit = () => {
     onSave(_title.value, _description.value)
   }
 
@@ -22,56 +21,60 @@ const Card = ({
     <section
       className={className}
     >
-     { isEdit
-        ? <input
-          ref={input => _title = input}
-          type="text"
-          defaultValue={title}
-        />
-        : <h1>{title}</h1>
-      }
-      {
-        isEdit
-          ? <textarea
-            ref={input => _description = input}
-            className="description"
-            defaultValue={description}
+      <div className="add-card">
+       { isEdit
+          ? <input
+            ref={input => _title = input}
+            type="text"
+            defaultValue={title}
           />
-          : <pre
-            className="description"
-          >
-            {description}
-          </pre>
-      }
-      <div className="buttons">
-        { isEdit
-          ? <button
-            onClick={submit}
-            className="edit"
-          >
-            <FaSave/>
-          </button>
-          : <button
-            onClick={onEdit}
-            className="edit"
-          >
-            <FaEdit/>
-          </button>
+          : <h1>{title}</h1>
         }
-        <button
-          onClick={onToggleDone}
-          className="check"
-        >
-          {isDone ? <FaRedo/> : <FaCheck/>}
-        </button>
-        <button
-          onClick={onRemove}
-          className="remove"
-        >
-          <FaTrash/>
-        </button>
+        {
+          isEdit
+            ? <textarea
+              ref={input => _description = input}
+              className="description"
+              defaultValue={description}
+            />
+            : <pre
+              className="description"
+            >
+              {description}
+            </pre>
+        }
       </div>
-      <TimeAgo timestamp={timestamp}/>
+      <div className="bottom-panel">
+        <TimeAgo timestamp={timestamp}/>
+        <div className="buttons">
+          { isEdit
+            ? <button
+              onClick={submit}
+              className="edit"
+            >
+              <FaSave/>
+            </button>
+            : <button
+              onClick={onEdit}
+              className="edit"
+            >
+              <FaEdit/>
+            </button>
+          }
+          <button
+            onClick={onToggleDone}
+            className="check"
+          >
+            {isDone ? <FaRedo/> : <FaCheck/>}
+          </button>
+          <button
+            onClick={onRemove}
+            className="remove"
+          >
+            <FaTrash/>
+          </button>
+        </div>
+      </div>
     </section>
   )
 }
