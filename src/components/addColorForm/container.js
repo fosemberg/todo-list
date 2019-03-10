@@ -1,13 +1,13 @@
 import connect from 'react-redux/es/connect/connect';
-import {addColor} from '../../actions';
+import {addCard} from '../../actions';
 import ui from './AddCardForm';
 
 export const AddColorForm = connect(
-    null,
-    dispatch =>
-        ({
-            onNewColor(title, color) {
-                dispatch(addColor(title,color))
-            }
-        })
+  null,
+  dispatch =>
+    ({
+      onNewCard(title, description) {
+        dispatch(addCard(title, description))
+      }
+    })
 )(ui)

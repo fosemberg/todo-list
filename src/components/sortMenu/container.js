@@ -1,5 +1,5 @@
 import connect from 'react-redux/es/connect/connect';
-import {sortColors} from '../../actions';
+import {sortCards} from '../../actions';
 import ui from './SortMenu';
 
 export const SortMenu = connect(
@@ -10,7 +10,7 @@ export const SortMenu = connect(
   dispatch =>
     ({
       onSelect(sortBy) {
-        dispatch(sortColors(sortBy))
+        dispatch(sortCards(sortBy))
       }
     })
 )(ui)

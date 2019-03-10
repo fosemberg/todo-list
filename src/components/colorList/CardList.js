@@ -8,9 +8,9 @@ const CardList = ({
   onRemove = f => f,
   onToggleDone = f => f,
 }) =>
-  <div className="color-list">
+  <div className="card-list">
     {(colors.length === 0) ?
-      <p>No Colors Listed. (Add a Color)</p> :
+      <p>No Cards Listed. (Add a Card)</p> :
       colors.map(color =>
         <Card
           key={color.id}

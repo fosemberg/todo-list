@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './SortMenu.scss'
+import {SORTED_BY} from '../../constants';
 
 const options = {
-    date: "SORTED_BY_DATE",
-    title: "SORTED_BY_TITLE",
+    date: SORTED_BY.DATE,
+    title: SORTED_BY.TITLE,
+    description: SORTED_BY.DESCRIPTION,
 }
 
 const SortMenu = ({ sort="SORTED_BY_DATE", onSelect=f=>f}) =>

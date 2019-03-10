@@ -2,11 +2,11 @@ import C from '../constants'
 
 export const color = (state = {}, action) => {
   switch (action.type) {
-    case C.ADD_COLOR:
+    case C.ADD_CARD:
       return {
         id: action.id,
         title: action.title,
-        color: action.color,
+        description: action.description,
         timestamp: action.timestamp,
         rating: 0,
         list: 'todo'
@@ -32,7 +32,7 @@ export const color = (state = {}, action) => {
 
 export const colors = (state = [], action) => {
   switch (action.type) {
-    case C.ADD_COLOR :
+    case C.ADD_CARD :
       return [
         ...state,
         color({}, action)
@@ -45,7 +45,7 @@ export const colors = (state = [], action) => {
       return state.map(
         c => color(c, action)
       )
-    case C.REMOVE_COLOR :
+    case C.REMOVE_CARD :
       return state.filter(
         c => c.id !== action.id
       )
@@ -56,7 +56,7 @@ export const colors = (state = [], action) => {
 
 export const sort = (state = "SORTED_BY_DATE", action) => {
   switch (action.type) {
-    case "SORT_COLORS":
+    case "SORT_CARDS":
       return action.sortBy
     default :
       return state

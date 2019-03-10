@@ -1,17 +1,16 @@
 import React from 'react'
-import {Component} from 'react'
 import PropTypes from 'prop-types'
 import './AddCardForm.scss'
 
-const AddCardForm = ({onNewColor = f => f}) => {
+const AddCardForm = ({onNewCard: onNewCard = f => f}) => {
 
-  let _title, _color
+  let _title, _description
 
   const submit = e => {
     e.preventDefault()
-    onNewColor(_title.value, _color.value)
+    onNewCard(_title.value, _description.value)
     _title.value = ''
-    _color.value = ''
+    _description.value = ''
     _title.focus()
   }
 
@@ -23,7 +22,7 @@ const AddCardForm = ({onNewColor = f => f}) => {
              required
       />
       <textarea
-        ref={input => _color = input}
+        ref={input => _description = input}
         placeholder="Card description"
         rows="4"
         required
@@ -35,7 +34,7 @@ const AddCardForm = ({onNewColor = f => f}) => {
 }
 
 AddCardForm.propTypes = {
-  onNewColor: PropTypes.func
+  onNewCard: PropTypes.func
 }
 
 export default AddCardForm

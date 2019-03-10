@@ -9,7 +9,7 @@ class Card extends Component {
 
   render() {
     const {
-      title, color, timestamp, isDone = false,
+      title, description, timestamp, isDone = false,
       onRemove, onToggleDone
     } = this.props
     let className = "card"
@@ -32,9 +32,10 @@ class Card extends Component {
         >
           <FaTrash/>
         </button>
-        <pre className="color">
-                  {color}
-                </pre>
+        <pre
+          className="description">
+          {description}
+        </pre>
         <TimeAgo timestamp={timestamp}/>
       </section>
     )
@@ -44,17 +45,13 @@ class Card extends Component {
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  rating: PropTypes.number,
+  description: PropTypes.string.isRequired,
   onRemove: PropTypes.func,
-  onRate: PropTypes.func,
   onToggleDone: PropTypes.func,
 }
 
 Card.defaultProps = {
-  rating: 0,
   onRemove: f => f,
-  onRate: f => f
 }
 
 export default Card

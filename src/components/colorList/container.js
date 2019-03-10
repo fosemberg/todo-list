@@ -1,6 +1,6 @@
 import connect from 'react-redux/es/connect/connect';
 import {sortFunction, sortBy} from '../../lib/array-helpers';
-import {removeColor, toggleDoneCard} from '../../actions';
+import {removeCard, toggleDoneCard} from '../../actions';
 import ui from './CardList';
 
 export const ColorList = connect(
@@ -13,7 +13,7 @@ export const ColorList = connect(
   dispatch =>
     ({
       onRemove(id) {
-        dispatch(removeColor(id))
+        dispatch(removeCard(id))
       },
       onToggleDone(id) {
         dispatch(toggleDoneCard(id))

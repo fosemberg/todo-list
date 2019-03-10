@@ -1,19 +1,19 @@
 import C from './constants'
 import {v4} from 'uuid'
 
-export const addColor = (title, color) =>
+export const addCard = (title, description) =>
   ({
-    type: C.ADD_COLOR,
+    type: C.ADD_CARD,
     id: v4(),
     title,
-    color,
+    description,
     list: 'todo',
     timestamp: new Date().toString(),
   })
 
-export const removeColor = id =>
+export const removeCard = id =>
   ({
-    type: C.REMOVE_COLOR,
+    type: C.REMOVE_CARD,
     id,
   })
 
@@ -30,8 +30,8 @@ export const toggleDoneCard = (id) =>
     id,
   })
 
-export const sortColors = sortBy =>
+export const sortCards = sortBy =>
   ({
-    type: "SORT_COLORS",
+    type: C.SORT_CARDS,
     sortBy,
   })
