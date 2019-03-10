@@ -24,7 +24,8 @@ const storeFactory = (initialState=stateData) =>
         combineReducers({colors, sort}),
         (localStorage['redux-store']) ?
             JSON.parse(localStorage['redux-store']) :
-            stateData
+            stateData,
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 
 export default storeFactory
