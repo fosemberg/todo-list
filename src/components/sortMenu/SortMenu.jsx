@@ -17,7 +17,8 @@ const SortMenu = ({
   return <nav className="menu">
     <h1>Sort Colors</h1>
     {Object.keys(options).map((item, i) =>
-      <a key={i}
+      <a
+         key={i}
          href="#"
          className={(field === options[item]) ? "selected" : null}
          onClick={e => {
@@ -25,11 +26,12 @@ const SortMenu = ({
            onSelect(options[item])
          }}
       >
-        {item}{field === options[item]
-          ? isDesc
-            ? '^'
-            : '\\/'
-          : ''}
+        <span>{item}</span>
+        <span style={{display: field === options[item] ? 'block' : 'none'}}>{
+          isDesc
+            ? '↑'
+            : '↓'
+        }</span>
       </a>
     )}
   </nav>
