@@ -9,7 +9,7 @@ const options = {
   description: SORTED_BY.DESCRIPTION,
 }
 
-const SortMenu = ({sort = "SORTED_BY_DATE", onSelect = f => f}) =>
+const SortMenu = ({sort = SORTED_BY.DATE, onSelect = f => f}) =>
   <nav className="menu">
     <h1>Sort Colors</h1>
     {Object.keys(options).map((item, i) =>

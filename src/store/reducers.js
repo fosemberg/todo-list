@@ -66,6 +66,7 @@ export const sort = (
       return {
         ...state,
         field: action.field,
+        isDesc: action.field === state.field ? !state.isDesc : state.isDesc,
       }
     case C.SORT_CARDS_DESC_TOGGLE:
       return {

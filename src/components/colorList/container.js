@@ -7,8 +7,8 @@ export const ColorList = connect(
   state =>
     ({
       colors: [...state.colors]
-        .sort(sortFunction(state.sort.field))
-        .sort(sortBy('string', 'list', true))
+        .sort(sortFunction(state.sort.field, state.sort.isDesc))
+        .sort(sortBy(true)('string', 'list'))
     }),
   dispatch =>
     ({
