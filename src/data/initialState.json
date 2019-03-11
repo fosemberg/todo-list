@@ -5,21 +5,24 @@
       "title": "Fix the table",
       "description": "In the living room behind the door are the details.",
       "timestamp": "Sat Mar 12 2016 16:12:09 GMT-0800 (PST)",
-      "isEdit": false
+      "isEdit": false,
+      "list": "todo"
     },
     {
       "id": "f9005b4e-975e-433d-a646-79df172e1dbb",
       "title": "Refactoring rgb-trader",
       "description": "It is advisable to do before March",
       "timestamp": "Fri Mar 11 2016 12:00:00 GMT-0800 (PST)",
-      "isEdit": false
+      "isEdit": false,
+      "list": "todo"
     },
     {
       "id": "58d9caee-6ea6-4d7b-9984-65b145031979",
       "title": "Start getting up at 7 am",
       "description": "Before work: charging for half an hour, half an hour to read books",
       "timestamp": "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)",
-      "isEdit": false
+      "isEdit": false,
+      "list": "todo"
     }
   ],
   "sort": {
