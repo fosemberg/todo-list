@@ -27,7 +27,7 @@ const SortMenu = ({
          }}
       >
         <span>{item}</span>
-        <span style={{display: field === options[item] ? 'block' : 'none'}}>{
+        <span style={{visibility: field === options[item] ? '' : 'hidden'}}>{
           isDesc
             ? '↑'
             : '↓'
